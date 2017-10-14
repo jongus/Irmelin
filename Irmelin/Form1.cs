@@ -21,6 +21,9 @@ namespace Irmelin
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            string settingsFile = System.AppDomain.CurrentDomain.BaseDirectory + "arcade.cfg";
+
+
             for (int i = 0; i < labels.Length; i++)
             {
                 labels[i] = new Label();
@@ -31,10 +34,12 @@ namespace Irmelin
                 labels[i].ForeColor = labelModel.ForeColor;
                 labels[i].Left = labelModel.Left;
                 labels[i].TextAlign = labelModel.TextAlign;
-                labels[i].Text = "123" + i.ToString();
+                labels[i].Text = "-";
                 labels[i].Top = 625 + (i * 50);
                 this.Controls.Add(labels[i]);
             }
+
+
         }
     }
 }
