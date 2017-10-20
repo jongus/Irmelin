@@ -38,11 +38,12 @@ namespace Irmelin
                 labels[i].Left = labelModel.Left;
                 labels[i].TextAlign = labelModel.TextAlign;
                 labels[i].Text = "-";
-                labels[i].Top = 625 + (i * 50);
+                //labels[i].Top = 625 + (i * 50);
+                labels[i].Top = 125 + (i * 50);
                 this.Controls.Add(labels[i]);
             }
             //Read the games file and add it to games list
-            using (StreamReader reader = new StreamReader(System.AppDomain.CurrentDomain.BaseDirectory + "games_s.cfg"))
+            using (StreamReader reader = new StreamReader(System.AppDomain.CurrentDomain.BaseDirectory + "games_l.cfg"))
             {
                 string line;
                 while ((line = reader.ReadLine()) != null)
@@ -71,32 +72,36 @@ namespace Irmelin
             {
                 if(menuSelectedGame == 9)
                 {
-                    menuStartPos = menuStartPos > 0 ? menuStartPos-- : 0;
+                    menuStartPos = menuStartPos > 0 ? menuStartPos - 1 : 0;
                     if (menuStartPos == 0)
                     {
-                        menuSelectedGame = menuSelectedGame > 0 ? menuSelectedGame-- : 0;
+                        menuSelectedGame = menuSelectedGame > 0 ? menuSelectedGame - 1 : 0;
                     }
 
                 } else
                 {
-                    menuSelectedGame = menuSelectedGame > 0 ? menuSelectedGame-- : 0;
+                    menuSelectedGame = menuSelectedGame > 0 ? menuSelectedGame - 1 : 0;
                 }
-                
-            }else if(e.KeyCode == Keys.Down)
+                ReDrawMenu();
+            }
+            else if(e.KeyCode == Keys.Down)
             {
                 if (menuSelectedGame == 9)
                 {
-                    menuStartPos = (games.Count - menuStartPos) <= labels.Length ? menuStartPos++ : games.Count - labels.Length;
+                    menuStartPos = (games.Count - menuStartPos) >= labels.Length ? menuStartPos + 1 : games.Count - labels.Length;
                     if (menuStartPos == games.Count - labels.Length)
                     {
-                        menuSelectedGame = menuSelectedGame < labels.Length ? menuSelectedGame++ : labels.Length;
+                        menuSelectedGame = menuSelectedGame < labels.Length ? menuSelectedGame + 1 : labels.Length;
+                        if (menuSelectedGame >= games.Count) menuSelectedGame = games.Count - 1;
                     }
 
                 }
                 else
                 {
-                    menuSelectedGame = menuSelectedGame < labels.Length ? menuSelectedGame++ : labels.Length;
+                    menuSelectedGame = menuSelectedGame < labels.Length ? menuSelectedGame + 1 : labels.Length;
+                    if (menuSelectedGame >= games.Count) menuSelectedGame = games.Count - 1;
                 }
+                ReDrawMenu();
             }
 
         }

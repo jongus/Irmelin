@@ -40,10 +40,10 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(50, 233);
+            this.pictureBox1.Location = new System.Drawing.Point(2052, 213);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(2000, 923);
+            this.pictureBox1.Size = new System.Drawing.Size(2000, 87);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -74,7 +74,7 @@
             this.labelModel.BackColor = System.Drawing.Color.DarkGray;
             this.labelModel.Font = new System.Drawing.Font("Segoe UI Semilight", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelModel.ForeColor = System.Drawing.Color.DimGray;
-            this.labelModel.Location = new System.Drawing.Point(50, 1202);
+            this.labelModel.Location = new System.Drawing.Point(50, 350);
             this.labelModel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelModel.Name = "labelModel";
             this.labelModel.Size = new System.Drawing.Size(2000, 96);
@@ -97,7 +97,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(2100, 1904);
+            this.ClientSize = new System.Drawing.Size(2100, 2788);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.labelModel);
