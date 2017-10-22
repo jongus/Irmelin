@@ -74,7 +74,7 @@
             this.labelModel.BackColor = System.Drawing.Color.DarkGray;
             this.labelModel.Font = new System.Drawing.Font("Segoe UI Semilight", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelModel.ForeColor = System.Drawing.Color.DimGray;
-            this.labelModel.Location = new System.Drawing.Point(25, 182);
+            this.labelModel.Location = new System.Drawing.Point(25, 625);
             this.labelModel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelModel.Name = "labelModel";
             this.labelModel.Size = new System.Drawing.Size(1000, 50);
@@ -86,10 +86,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel2.Location = new System.Drawing.Point(0, 1630);
+            this.panel2.Location = new System.Drawing.Point(0, 1580);
             this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1050, 50);
+            this.panel2.Size = new System.Drawing.Size(1050, 100);
             this.panel2.TabIndex = 5;
             // 
             // Form1
