@@ -40,10 +40,10 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(2052, 213);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(25, 125);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(2000, 87);
+            this.pictureBox1.Size = new System.Drawing.Size(1000, 480);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -52,10 +52,10 @@
             this.lblPlatform.BackColor = System.Drawing.Color.Gainsboro;
             this.lblPlatform.Font = new System.Drawing.Font("Segoe UI Semibold", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlatform.ForeColor = System.Drawing.Color.DimGray;
-            this.lblPlatform.Location = new System.Drawing.Point(42, 17);
-            this.lblPlatform.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPlatform.Location = new System.Drawing.Point(21, 9);
+            this.lblPlatform.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPlatform.Name = "lblPlatform";
-            this.lblPlatform.Size = new System.Drawing.Size(2000, 144);
+            this.lblPlatform.Size = new System.Drawing.Size(1000, 75);
             this.lblPlatform.TabIndex = 3;
             this.lblPlatform.Text = "Super Nintendo Entertainment System";
             // 
@@ -64,9 +64,9 @@
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
             this.panel1.Controls.Add(this.lblPlatform);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2100, 192);
+            this.panel1.Size = new System.Drawing.Size(1050, 100);
             this.panel1.TabIndex = 4;
             // 
             // labelModel
@@ -74,10 +74,10 @@
             this.labelModel.BackColor = System.Drawing.Color.DarkGray;
             this.labelModel.Font = new System.Drawing.Font("Segoe UI Semilight", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelModel.ForeColor = System.Drawing.Color.DimGray;
-            this.labelModel.Location = new System.Drawing.Point(50, 350);
-            this.labelModel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelModel.Location = new System.Drawing.Point(25, 182);
+            this.labelModel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelModel.Name = "labelModel";
-            this.labelModel.Size = new System.Drawing.Size(2000, 96);
+            this.labelModel.Size = new System.Drawing.Size(1000, 50);
             this.labelModel.TabIndex = 5;
             this.labelModel.Text = "Arkanoid, 1981";
             this.labelModel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -86,18 +86,18 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel2.Location = new System.Drawing.Point(0, 3135);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(0, 1630);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(2100, 96);
+            this.panel2.Size = new System.Drawing.Size(1050, 50);
             this.panel2.TabIndex = 5;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(2100, 2788);
+            this.ClientSize = new System.Drawing.Size(1050, 1680);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.labelModel);
@@ -106,7 +106,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";

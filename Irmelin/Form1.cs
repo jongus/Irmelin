@@ -38,8 +38,8 @@ namespace Irmelin
                 labels[i].Left = labelModel.Left;
                 labels[i].TextAlign = labelModel.TextAlign;
                 labels[i].Text = "-";
-                //labels[i].Top = 625 + (i * 50);
-                labels[i].Top = 125 + (i * 50);
+                labels[i].Top = 625 + (i * 50);
+                //labels[i].Top = 125 + (i * 50);
                 this.Controls.Add(labels[i]);
             }
             //Read the games file and add it to games list
