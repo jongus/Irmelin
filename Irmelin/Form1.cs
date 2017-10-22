@@ -62,6 +62,12 @@ namespace Irmelin
                 labels[i].Text = games[i + menuStartPos].Item1;
                 labels[i].BackColor = menuSelectedGame == i ? Color.DimGray : Color.DarkGray;
                 labels[i].ForeColor = menuSelectedGame == i ? Color.DarkGray : Color.DimGray;
+                if(menuSelectedGame == i)
+                {
+                    lblPlatform.Text = games[i + menuStartPos].Item2;
+                    gamePicture.Image = Image.FromFile(games[i + menuStartPos].Item2);
+
+                }
             }
         }
 
@@ -102,6 +108,11 @@ namespace Irmelin
                 }
                 ReDrawMenu();
             }
+
+        }
+
+        private void lblPlatform_Click(object sender, EventArgs e)
+        {
 
         }
     }
