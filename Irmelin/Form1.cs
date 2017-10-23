@@ -56,18 +56,30 @@ namespace Irmelin
 
         private void ReDrawMenu()
         {
-            int cnt = games.Count > labels.Length ? labels.Length - 1 : games.Count - 1;
-            for(int i = 0; i <= cnt; i++)
+            try
             {
-                labels[i].Text = games[i + menuStartPos].Item1;
-                labels[i].BackColor = menuSelectedGame == i ? Color.DimGray : Color.DarkGray;
-                labels[i].ForeColor = menuSelectedGame == i ? Color.DarkGray : Color.DimGray;
-                if(menuSelectedGame == i)
+                int cnt = games.Count > labels.Length ? labels.Length - 1 : games.Count - 1;
+                for (int i = 0; i <= cnt; i++)
                 {
-                    lblPlatform.Text = games[i + menuStartPos].Item2;
-                    gamePicture.Image = Image.FromFile(games[i + menuStartPos].Item2);
-
+                    labels[i].Text = games[i + menuStartPos].Item1;
+                    labels[i].BackColor = menuSelectedGame == i ? Color.DimGray : Color.DarkGray;
+                    labels[i].ForeColor = menuSelectedGame == i ? Color.DarkGray : Color.DimGray;
+                    if (menuSelectedGame == i)
+                    {
+                        lblPlatform.Text = games[i + menuStartPos].Item2;
+                        try
+                        {
+                            gamePicture.Image = Image.FromFile(System.AppDomain.CurrentDomain.BaseDirectory + games[i + menuStartPos].Item3);
+                        } catch (Exception e)
+                        {
+                            gamePicture.Image = null;
+                        }
+                    }
                 }
+            }
+            catch (Exception e)
+            {
+
             }
         }
 
