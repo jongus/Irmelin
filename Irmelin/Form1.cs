@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Diagnostics;
 
 namespace Irmelin
 {
@@ -17,7 +13,6 @@ namespace Irmelin
         List<Tuple<string, string, string, string, string>> games = new List<Tuple<string, string, string, string, string>>();
         int menuStartPos = 0;
         int menuSelectedGame = 0;
-
 
         public Form1()
         {
@@ -42,14 +37,21 @@ namespace Irmelin
                 this.Controls.Add(labels[i]);
             }
             //Read the games file and add it to games list
-            using (StreamReader reader = new StreamReader(System.AppDomain.CurrentDomain.BaseDirectory + "games_l.cfg"))
+            try
             {
-                string line;
-                while ((line = reader.ReadLine()) != null)
+                using (StreamReader reader = new StreamReader(System.AppDomain.CurrentDomain.BaseDirectory + "games_l.cfg"))
                 {
-                    string[] parts = line.Split(';');
-                    games.Add(new Tuple<string, string, string, string, string>(parts[0], parts[1], parts[2], parts[3], parts[4]));
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        string[] parts = line.Split(';');
+                        games.Add(new Tuple<string, string, string, string, string>(parts[0], parts[1], parts[2], parts[3], parts[4]));
+                    }
                 }
+            } catch (Exception ex)
+            {
+                Console.WriteLine("I have problems redrawing the menu...");
+                Console.WriteLine(ex.Message);
             }
             ReDrawMenu();
         }
@@ -69,17 +71,18 @@ namespace Irmelin
                         lblPlatform.Text = games[i + menuStartPos].Item2;
                         try
                         {
-                            gamePicture.Image = Image.FromFile(System.AppDomain.CurrentDomain.BaseDirectory + games[i + menuStartPos].Item3);
-                        } catch (Exception e)
+                            gamePicture.Image = Image.FromFile(games[i + menuStartPos].Item3);
+                        } catch (Exception ex)
                         {
                             gamePicture.Image = null;
                         }
                     }
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-
+                Console.WriteLine("I have problems redrawing the menu...");
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -94,7 +97,6 @@ namespace Irmelin
                     {
                         menuSelectedGame = menuSelectedGame > 0 ? menuSelectedGame - 1 : 0;
                     }
-
                 } else
                 {
                     menuSelectedGame = menuSelectedGame > 0 ? menuSelectedGame - 1 : 0;
@@ -111,7 +113,6 @@ namespace Irmelin
                         menuSelectedGame = menuSelectedGame < labels.Length - 1 ? menuSelectedGame + 1 : labels.Length - 1;
                         if (menuSelectedGame >= games.Count) menuSelectedGame = games.Count - 1;
                     }
-
                 }
                 else
                 {
@@ -120,12 +121,23 @@ namespace Irmelin
                 }
                 ReDrawMenu();
             }
-
-        }
-
-        private void lblPlatform_Click(object sender, EventArgs e)
-        {
-
+            else if (e.KeyCode == Keys.Enter)
+            {
+                try
+                {
+                    Process ExternalProcess = new Process();
+                    ExternalProcess.StartInfo.FileName = games[menuSelectedGame + menuStartPos].Item4;
+                    ExternalProcess.StartInfo.Arguments = games[menuSelectedGame + menuStartPos].Item5;
+                    ExternalProcess.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
+                    ExternalProcess.Start();
+                    ExternalProcess.WaitForExit();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Could not run " + games[menuSelectedGame + menuStartPos].Item4 + " " + games[menuSelectedGame + menuStartPos].Item5);
+                    Console.WriteLine(ex.Message);
+                }
+            }
         }
     }
 }
